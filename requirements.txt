@@ -6,7 +6,6 @@ django-crispy-forms
 django-environ
 pillow
 psycopg2-binary
-pywin32
 sqlparse
 typing_extensions
 tzdata
