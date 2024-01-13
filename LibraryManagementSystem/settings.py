@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-import environ
 import dj_database_url
+import environ
 env = environ.Env()
 environ.Env.read_env()
 
@@ -92,15 +92,11 @@ WSGI_APPLICATION = 'LibraryManagementSystem.wsgi.application'
 #     }
 # }
 
-DATABASES={
-    'default':{
-        'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME':env("DB_NAME"),
-        'USER':env("DB_USER"),
-        'PASSWORD':env("DB_PASSWORD"),
-        'HOST':env("DB_HOST"),
-        'PORT':env("DB_PORT"),
-    }
+
+DATABASES = {
+    'default':dj_database_url.config(
+        default='postgres://smartlibrary_zwlw_user:Hrga2Bu4tPAVenakCUozL7Po7jdpyuYG@dpg-cmhc2tfqd2ns73fqo2qg-a.oregon-postgres.render.com/smartlibrary_zwlw',
+    )
 }
 
 
